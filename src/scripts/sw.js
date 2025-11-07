@@ -7,20 +7,20 @@ import CONFIG from './config';
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
-    ({ url }) => {
-        return url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com';
-    },
-    new CacheFirst({
-        cacheName: 'google-fonts',
-    }),
+  ({ url }) => {
+    return url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com';
+  },
+  new CacheFirst({
+    cacheName: 'google-fonts',
+  }),
 );
 registerRoute(
-    ({ url }) => {
-        return url.origin === 'https://cdnjs.cloudflare.com' || url.origin.includes('fontawesome');
-    },
-    new CacheFirst({
-        cacheName: 'fontawesome',
-    }),
+  ({ url }) => {
+    return url.origin === 'https://cdnjs.cloudflare.com' || url.origin.includes('fontawesome');
+  },
+  new CacheFirst({
+    cacheName: 'fontawesome',
+  }),
 );
 registerRoute(
   ({ request, url }) => {
@@ -51,22 +51,36 @@ registerRoute(
 
 
 self.addEventListener('push', async event => {
-    console.log('Push event diterima:', event);
+  console.log('Push event diterima:', event);
 
-    let data = {
-        title: 'Story berhasil dibuat',
+  let data = {
+    title: 'Story berhasil dibuat',
+    options: {
+      body: 'Anda telah membuat story baru dengan deskripsi default.',
+    },
+  };
+
+  // if (event.data) {
+  //     data = await event.data.json();
+  // }
+
+  if (event.data) {
+    try {
+      data = await event.data.json();
+    } catch (e) {
+      const text = await event.data.text();
+      data = {
+        title: 'Notifikasi Baru',
         options: {
-            body: 'Anda telah membuat story baru dengan deskripsi default.',
+          body: text || 'Anda menerima notifikasi baru.',
         },
-    };
-
-    if (event.data) {
-        data = await event.data.json();
+      };
     }
+  }
 
-    event.waitUntil(
-        self.registration.showNotification(data.title, {
-            body: data.options.body,
-        })
-    );
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.options.body,
+    })
+  );
 });
