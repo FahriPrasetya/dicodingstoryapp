@@ -4,6 +4,7 @@ export default class DetailStoryPage {
   async render() {
     return `
       <section class="container">
+      <h1 class="story-detail-title">Detail Story</h1>
         <div id="story-detail"></div>
       </section>
     `;

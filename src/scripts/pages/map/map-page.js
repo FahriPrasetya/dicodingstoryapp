@@ -4,7 +4,7 @@ export default class MapPage {
     async render() {
         return `
       <section class="map-page-container">
-        <h2 class="map-page-title">Dicoding Story Map</h2>
+        <h1 class="map-page-title">Dicoding Story Map</h1>
         <div class="map-page-buttons">
         <button id="add-story-btn">+ Add Story</button>
         <button id="list-story-card-btn" class="different-visual-btn">Lihat Story Card</button>
