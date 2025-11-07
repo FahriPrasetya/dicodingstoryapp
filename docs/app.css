@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  padding-inline: 32px;
+  margin-inline: auto;
+  max-width: 1300px;
+}
+
+header {
+  background-color: lightskyblue;
+}
+
+.main-header {
+  min-height: 90px;
+  padding-block: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.navigation-drawer {
+  min-height: 100vh;
+  width: 200px;
+  padding: 20px 10px;
+  background-color: #fff;
+
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+
+  box-shadow: 0 0 4px 2px #00000033;
+  transform: translateX(-100%);
+  transition: transform 350ms;
+
+  z-index: 9999;
+}
+
+.navigation-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-button {
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+
+  display: inline-block;
+  background-color: transparent;
+
+  font-weight: bold;
+  font-size: 28px;
+  color: #141e16;
+
+  cursor: pointer;
+}
+
+.nav-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px 20px;
+}
+
+.nav-list li a {
+  padding: 6px 10px;
+
+  display: block;
+
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN */
+.main-content {
+  padding-block: 20px;
+  min-height: 80vh;
+}
+
+/* Write your styles more here */
+.register-page-container, .login-page-container {
+  width: 25%;
+  background-color: lightskyblue;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.register-page-title, .login-page-title {
+  margin-bottom: 12px;
+}
+
+#register-form div label, #login-form div label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+#register-form div input, #login-form div input {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+#register-form button, #login-form button {
+  font-size: 1rem;
+  margin-top: 12px;
+  background-color: #1E90FF;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 8px;
+  transition: .3s all ease-in-out;
+}
+
+#register-form button:hover, #login-form button:hover, .story-card button:hover {
+  cursor: pointer;
+  background-color: #186dc3;
+}
+
+.home-page-container, .map-page-container, .saved-stories-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.home-page-buttons, .map-page-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#add-story-btn {
+  margin-top: 12px;
+  background-color: lightskyblue;
+  border: 1px solid black;
+  padding: 8px 12px;
+  border-radius: 4px;
+  align-self: end;
+  margin-right: 12px;
+  transition: .3s all ease-in-out;
+}
+
+#add-story-btn:hover {
+  cursor: pointer;
+  background-color: rgb(124, 190, 232);
+}
+
+.different-visual-btn {
+  background-color: lightskyblue;
+  border: 1px solid black;
+  padding: 0 24px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.different-visual-btn:hover {
+  cursor: pointer;
+  background-color: rgb(124, 190, 232);
+}
+
+.notification-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+#subscribe-button, #unsubscribe-button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: lightskyblue;
+  border: 1px solid black;
+  transition: .3s all ease-in-out;
+}
+
+#subscribe-button:hover, #unsubscribe-button:hover, #saved-stories-btn:hover {
+  cursor: pointer;
+  background-color: rgb(124, 190, 232);
+}
+
+#saved-stories-btn {
+  background-color: lightskyblue;
+  padding: 10px 16px;
+  border: 1px solid black;
+  justify-self: end;
+  align-self: end;
+  transition: .3s all ease-in-out;
+}
+
+
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.story-card {
+  background: #ffffff15;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.story-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.story-card h2 {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 1.5rem;
+}
+
+.story-card p {
+  margin-bottom: 12px;
+}
+
+.story-card button {
+  display: block;
+  border: 1px solid black;
+  padding: 8px 12px;
+  background-color: #1E90FF;
+  border-radius: 4px;
+  transition: .3s;
+  margin-bottom: 18px;
+}
+
+.detail-link {
+  text-decoration: none;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.save-story-btn {
+  color: white;
+}
+
+.story-card small {
+  align-self: end;
+}
+
+/* add story */
+.add-story-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+#addStoryForm {
+  background-color: lightskyblue;
+  padding: 12px 32px;
+  border-radius: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  margin-top: 16px;
+}
+
+.form-group textarea {
+  width: 100%;
+  min-height: 80px;
+  border-radius: 6px;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  min-height: 40px;
+  border-radius: 6px;
+  border: none;
+  padding: 6px;
+  font-size: 1rem;
+}
+
+
+#addStoryForm button {
+  margin-top: 18px;
+  padding: 12px;
+  background-color: #1E90FF;
+  color: white;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  transition: .3s;
+}
+
+#addStoryForm button:hover {
+  background-color: #186dc3;
+  cursor: pointer;
+}
+
+
+
+footer {
+  width: 100%;
+  background-color: lightskyblue;
+  padding: 24px 0;
+
+}
+
+footer p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+/* MY CUSTOM TRANSITION */
+@keyframes page-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+::view-transition-old(root) {
+  animation-name: page-out;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in;
+}
+
+::view-transition-new(root) {
+  animation-name: page-in;
+  animation-duration: 400ms;
+  animation-timing-function: ease-out;
+}
+
+
+
+
+
+
+@media screen and (width > 1000px) {
+  .navigation-drawer {
+    min-height: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: static;
+    box-shadow: none;
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-list li a {
+    display: inline-block;
+  }
+
+  .drawer-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .register-page-container, .login-page-container {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-page-buttons, .map-page-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #add-story-btn {
+    align-self: stretch;
+    margin-right: 0;
+  }
+
+  .different-visual-btn {
+    align-self: stretch;
+    padding: 8px;
+  }
+
+  .register-page-container, .login-page-container {
+    width: 80%;
+  }
+
+  .notification-buttons {
+    margin-bottom: 24px;
+  }
+
+  .add-story-container {
+    width: 95%;
+  }
+
+  .add-story-title {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+}

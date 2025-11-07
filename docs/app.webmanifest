@@ -1,0 +1,63 @@
+{
+    "id": "/#/",
+    "start_url": "/#/",
+    "scope": "/",
+    "name": "Dicoding Story App",
+    "short_name": "DicodingApp",
+    "description": "Aplikasi berbagi cerita untuk peserta dicoding dari berbagai lokasi",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#87CEFA",
+    "icons": [
+        {
+            "src": "images/logo.png",
+            "type": "image/png",
+            "sizes": "144x144",
+            "purpose": "any"
+        },
+        {
+            "src": "./favicon.png",
+            "type": "image/png",
+            "sizes": "48x48",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+    {
+      "src": "images/screenshoot-apps/dicoding-story-app-01.png",
+      "sizes": "1920x1043",
+      "type": "image/png",
+      "form_factor" : "wide"
+    },
+    {
+      "src": "images/screenshoot-apps/dicoding-story-app-02.png",
+      "sizes": "1920x1043",
+      "type": "image/png",
+      "form_factor" : "wide"
+    },
+    {
+      "src": "images/screenshoot-apps/dicoding-story-app-03.png",
+      "sizes": "1920x1043",
+      "type": "image/png",
+      "form_factor" : "wide"
+    },
+    {
+      "src": "images/screenshoot-apps/dicoding-story-app-04.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor" : "narrow"
+    },
+    {
+      "src": "images/screenshoot-apps/dicoding-story-app-05.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor" : "narrow"
+    },
+    {
+      "src": "images/screenshoot-apps/dicoding-story-app-06.png",
+      "sizes": "1080x2280",
+      "type": "image/png",
+      "form_factor" : "narrow"
+    }
+  ]
+}
