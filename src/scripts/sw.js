@@ -60,10 +60,6 @@ self.addEventListener('push', async event => {
     },
   };
 
-  // if (event.data) {
-  //     data = await event.data.json();
-  // }
-
   if (event.data) {
     try {
       data = await event.data.json();
